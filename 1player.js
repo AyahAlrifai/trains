@@ -8,12 +8,12 @@ initial_node["cost"]=0;
 var depth=4;
 function back()
 {
-  location.assign("https://github.com/AyahAlrifai/trains/blob/master/index.html")
+  location.assign("index.html")
 }
 function new_game()
 {
 document.body.innerHTML=
-'<img src="https://github.com/AyahAlrifai/trains/blob/master/arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
+'<img src="arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
 '<div id="win"></div>'+
 '<div class="h" style="top:50px"></div>'+
 '<div class="h" style="top:350px"></div>'+
