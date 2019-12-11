@@ -8,7 +8,7 @@ initial_node["cost"]=0;
 var depth=4;
 function back()
 {
-  location.assign("index.html")
+  location.assign("https://github.com/AyahAlrifai/trains/blob/master/index.html")
 }
 function new_game()
 {
