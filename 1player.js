@@ -8,12 +8,12 @@ initial_node["cost"]=0;
 var depth=4;
 function back()
 {
-  location.assign("/home/ayah/Desktop/trains/base.html")
+  location.assign("index.html")
 }
 function new_game()
 {
 document.body.innerHTML=
-'<img src="/home/ayah/Desktop/trains/arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
+'<img src="arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
 '<div id="win"></div>'+
 '<div class="h" style="top:50px"></div>'+
 '<div class="h" style="top:350px"></div>'+
