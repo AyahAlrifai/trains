@@ -2,12 +2,12 @@ var count=0;
 var state={"c1":0,"c2":0,"c3":0,"c4":0,"c5":0,"c6":0,"c7":0,"c8":0,"c9":0};
 function back()
 {
-  location.assign("/home/ayah/Desktop/trains/base.html")
+  location.assign("index.html")
 }
 function new_game()
 {
 document.body.innerHTML=
-'    <img src="/home/ayah/Desktop/trains/arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
+'    <img src="arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
 '<div id="win"></div>'+
 '<div class="h" style="top:50px"></div>'+
 '<div class="h" style="top:350px"></div>'+
