@@ -5,11 +5,11 @@ function select_mode()
   document.write(s1);
   if(s1)
   {
-    location.replace("/home/ayah/Desktop/trains/1player.html")
+    location.replace("1player.html")
   }
   if(s2)
   {
-    location.replace("/home/ayah/Desktop/trains/2players.html")
+    location.replace("2players.html")
   }
 
 }
