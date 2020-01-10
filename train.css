@@ -8,9 +8,10 @@
   border-color: #ffffff;
   border-style: dashed;
   font-size: 1em;
-  color: #FFFFFF;
+  color: #000000;
   background:-webkit-radial-gradient(top right,#751CE8,#BF0EA1,#054AA5);
   opacity: 0.85;
+  text-align: center;;
 }
 .button
 {
