@@ -6,30 +6,29 @@ function back()
 }
 function new_game()
 {
-document.body.innerHTML=
-'    <img src="arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
+document.body.innerHTML='<img src="arrow.png" alt="back" onclick="back()" width="100px" height="70px">'+
 '<div id="win"></div>'+
-'<div class="h" style="top:50px"></div>'+
-'<div class="h" style="top:350px"></div>'+
-'<div class="h" style="top:650px"></div>'+
-'<div class="v" style="left:290px"></div>'+
-'<div class="v" style="left:590px"></div>'+
-'<div class="v" style="left:890px"></div>'+
-'<div class="circle" style="left:265px;top:25px;"  id="c1"></div>'+
-'<div class="circle" style="left:265px;top:325px;" id="c4"></div>'+
-'<div class="circle" style="left:265px;top:625px;" id="c7"></div>'+
-'<div class="circle" style="left:567px;top:25px;;" id="c2"></div>'+
-'<div class="circle" style="left:567px;top:325px;" id="c5"></div>'+
-'<div class="circle" style="left:567px;top:625px;" id="c8"></div>'+
-'<div class="circle" style="left:867px;top:25px;"  id="c3"></div>'+
-'<div class="circle" style="left:867px;top:325px;" id="c6"></div>'+
-'<div class="circle" style="left:867px;top:625px;" id="c9"></div>'+
-'<p draggable="true" class="stone1" style="left:120px;top:325px;"  id="1"></p>'+
-'<p draggable="true" class="stone1" style="left:120px;top:325px;"  id="2"></p>'+
-'<p draggable="true" class="stone1" style="left:120px;top:325px;"  id="3"></p>'+
-'<p draggable="true" class="stone2" style="left:1035px;top:325px;" id="4"></p>'+
-'<p draggable="true" class="stone2" style="left:1035px;top:325px;" id="5"></p>'+
-'<p draggable="true" class="stone2" style="left:1035px;top:325px;" id="6"></p>';
+'<div class="h" style="top:8%"></div>'+
+'<div class="h" style="top:50%"></div>'+
+'<div class="h" style="top:92%"></div>'+
+'<div class="v" style="left:27%"></div>'+
+'<div class="v" style="left:50%"></div>'+
+'<div class="v" style="left:73%"></div>'+
+'<div class="circle" style="left:25%;top:6%;"  id="c1"></div>'+
+'<div class="circle" style="left:25%;top:48%;" id="c4"></div>'+
+'<div class="circle" style="left:25%;top:90%;" id="c7"></div>'+
+'<div class="circle" style="left:48%;top:6%;;" id="c2"></div>'+
+'<div class="circle" style="left:48%;top:48%;" id="c5"></div>'+
+'<div class="circle" style="left:48%;top:90%;" id="c8"></div>'+
+'<div class="circle" style="left:71%;top:6%;"  id="c3"></div>'+
+'<div class="circle" style="left:71%;top:48%;" id="c6"></div>'+
+'<div class="circle" style="left:71%;top:90%;" id="c9"></div>'+
+'<div draggable="true" class="stone1" style="left:13%;top:48%;"  id="1"></div>'+
+'<div draggable="true" class="stone1" style="left:13%;top:48%;"  id="2"></div>'+
+'<div draggable="true" class="stone1" style="left:13%;top:48%;"  id="3"></div>'+
+'<div draggable="true" class="stone2" style="right:13%;top:48%;" id="4"></div>'+
+'<div draggable="true" class="stone2" style="right:13%;top:48%;" id="5"></div>'+
+'<div draggable="true" class="stone2" style="right:13%;top:48%;" id="6"></div>';
 state={"c1":0,"c2":0,"c3":0,"c4":0,"c5":0,"c6":0,"c7":0,"c8":0,"c9":0};
 count=0;
 
@@ -108,21 +107,23 @@ document.addEventListener("dragover", function(event) {
 });
 
 
-
 document.addEventListener("drop", function(event) {
   event.preventDefault();
   if ( event.target.className == "circle" ) {
     var data = event.dataTransfer.getData("p");
     var x=document.getElementById(data);
+    console.log("left"+event.target.style.left);
+    console.log("top"+event.target.style.top);
+
     if((data=="1" || data=="2" || data=="3") && count%2==0 && count<=5)
     {x.style.left=event.target.style.left;
-    x.style.top=parseInt(event.target.style.top)-16+"px";
+    x.style.top=parseInt(event.target.style.top)+"%";
       event.target.appendChild(x);
       state[x.parentNode.id]=1;
     count++;}
     else if((data=="4" || data=="5" || data=="6") && count%2!=0 && count<=5)
     {x.style.left=event.target.style.left;
-    x.style.top=parseInt(event.target.style.top)-16+"px";
+    x.style.top=parseInt(event.target.style.top)+"%";
       event.target.appendChild(x);
       state[x.parentNode.id]=2;
     count++;}
@@ -135,14 +136,14 @@ document.addEventListener("drop", function(event) {
         if((data=="1" || data=="2" || data=="3") && count%2==0)
         {state[x.parentNode.id]=0;
           x.style.left=event.target.style.left;
-        x.style.top=parseInt(event.target.style.top)-16+"px";
+        x.style.top=parseInt(event.target.style.top)+"%";
           event.target.appendChild(x);
           state[x.parentNode.id]=1;
         count++;}
         else if((data=="4" || data=="5" || data=="6") && count%2!=0)
         {state[x.parentNode.id]=0;
           x.style.left=event.target.style.left;
-        x.style.top=parseInt(event.target.style.top)-16+"px";
+        x.style.top=parseInt(event.target.style.top)+"%";
           event.target.appendChild(x);
           state[x.parentNode.id]=2;
         count++;}
