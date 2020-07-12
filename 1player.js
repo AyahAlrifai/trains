@@ -69,14 +69,6 @@ function check_win(state)
   {
   return state["c3"];
   }
-  else if(state["c1"]==state["c5"] && state["c1"]==state["c9"] && state["c1"]!=0)
-  {
-  return state["c1"];
-  }
-  else if(state["c3"]==state["c5"] && state["c3"]==state["c7"] && state["c3"]!=0)
-  {
-  return state["c3"];
-  }
   return 0;
 }
 function valid(idTran,idTarget)
@@ -125,10 +117,6 @@ function win_counter(s,char0,char1)
   if ((char0==s["c2"] || char0==s["c5"] || char0==s["c8"]) && (char1!=s["c2"] && char1!=s["c5"] && char1!=s["c8"]))
   c+=1;
   if ((char0==s["c3"] || char0==s["c6"] || char0==s["c9"]) && (char1!=s["c3"] && char1!=s["c6"] && char1!=s["c9"]))
-  c+=1;
-  if ((char0==s["c1"] || char0==s["c5"] || char0==s["c9"]) && (char1!=s["c1"] && char1!=s["c5"] && char1!=s["c9"]))
-  c+=1;
-  if ((char0==s["c3"] || char0==s["c5"] || char0==s["c7"]) && (char1!=s["c3"] && char1!=s["c5"] && char1!=s["c7"]))
   c+=1;
   return c;
 }
